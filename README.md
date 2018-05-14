@@ -3,8 +3,8 @@
 Build Go fat binary without installing Go on your machine.
 This requires Docker though.
 
-1. Copy `build.sh` and `Dockerfile` to your project's root folder.
-2. Run `./build.sh` (this may require `chmod +x build.sh`)
+1. Copy `go-build.sh` and `Dockerfile` to your project's root folder.
+2. Run `./go-build.sh` (this may require `chmod +x go-build.sh`)
 
 After successfull execution a file named `app` should appear in your project's root folder.
 
