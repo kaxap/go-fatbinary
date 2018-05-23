@@ -1,3 +1,4 @@
+#!/bin/bash
 
 set -e
 
@@ -8,6 +9,10 @@ fi
 
 IMAGE_NAME="go_build_image$NUMBER"
 
+function finish {
+  docker rmi $IMAGE_NAME
+}
+trap finish EXIT
+
 docker build -t $IMAGE_NAME --build-arg project_name=${PWD##*/} .
 docker run --rm -it -v ${PWD}:/gobuild $IMAGE_NAME cp /app /gobuild/
-docker rmi $IMAGE_NAME
